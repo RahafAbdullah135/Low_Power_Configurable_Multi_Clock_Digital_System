@@ -1,1 +1,1 @@
-# -Low-Power-Configurable-Multi-Clock-Digital-System
+# Low-Power-Configurable-Multi-Clock-Digital-System
