@@ -1,0 +1,328 @@
+
+                                 Formality (R)
+
+               Version L-2016.03-SP1 for linux64 - Apr 13, 2016 
+
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+  ** Highlights of Formality (R) Version L-2016.03 **
+   - New alternate verification strategies for resolving inconclusive verifications
+   - Automation for deploying alternate strategies
+   - New command to export the mapping of reference to implementation registers
+   - New capability to combine PG and low power information from db libraries with Verilog functional models
+
+   * Please refer to the Formality Release Notes for details and additional enhancements
+
+Build: 4031317
+Hostname: IC (RHEL64)
+Current time: Mon Aug 26 19:54:58 2024
+
+Loading db file '/opt/Synopsys/Formality2016/libraries/syn/gtech.db'
+###################################################################
+########################### Variables #############################
+###################################################################
+set SSLIB "/home/IC/Projects/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db"
+/home/IC/Projects/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db
+set TTLIB "/home/IC/Projects/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db"
+/home/IC/Projects/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+set FFLIB "/home/IC/Projects/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db"
+/home/IC/Projects/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db
+###################################################################
+############################ Guidance #############################
+###################################################################
+# Synopsys setup variable
+set synopsys_auto_setup true
+true
+# Formality Setup File
+set_svf "/home/IC/Projects/syn/SYS_TOP.svf"
+SVF set to '/home/IC/Projects/syn/SYS_TOP.svf'.
+1
+###################################################################
+###################### Reference Container ########################
+###################################################################
+# Read Reference Design Verilog Files
+read_verilog -container REF [glob /home/IC/Projects/rtl/*.v]
+No target library specified, default is WORK
+Initializing DesignWare ...
+Initialization Complete
+Loading verilog file '/home/IC/Projects/rtl/PULSE_GEN.v'
+Loading verilog file '/home/IC/Projects/rtl/Reg_File.v'
+Loading verilog file '/home/IC/Projects/rtl/ALU.v'
+Loading verilog file '/home/IC/Projects/rtl/mux2X1.v'
+Loading verilog file '/home/IC/Projects/rtl/Clk_Div.v'
+Loading verilog file '/home/IC/Projects/rtl/CLK_GATE.v'
+Loading verilog file '/home/IC/Projects/rtl/DATA_SYNC.v'
+Loading verilog file '/home/IC/Projects/rtl/SYS_TOP.v'
+Loading verilog file '/home/IC/Projects/rtl/CLK_DIV_MUX.v'
+Loading verilog file '/home/IC/Projects/rtl/SYS_CTRL.v'
+Loading verilog file '/home/IC/Projects/rtl/RST_SYNC.v'
+Created container 'REF'
+Current container set to 'REF'
+1
+read_verilog -container REF [glob /home/IC/Projects/rtl/UART/UART_TX/*.v]
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/rtl/UART/UART_TX/FSM.v'
+Loading verilog file '/home/IC/Projects/rtl/UART/UART_TX/parity_Calc.v'
+Loading verilog file '/home/IC/Projects/rtl/UART/UART_TX/MUX.v'
+Loading verilog file '/home/IC/Projects/rtl/UART/UART_TX/UART_TX.v'
+Loading verilog file '/home/IC/Projects/rtl/UART/UART_TX/serializer.v'
+1
+read_verilog -container REF [glob /home/IC/Projects/rtl/UART/UART_RX/*.v]
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/rtl/UART/UART_RX/stop_check.v'
+Loading verilog file '/home/IC/Projects/rtl/UART/UART_RX/UART_RX.v'
+Loading verilog file '/home/IC/Projects/rtl/UART/UART_RX/parity_check.v'
+Loading verilog file '/home/IC/Projects/rtl/UART/UART_RX/start_check.v'
+Loading verilog file '/home/IC/Projects/rtl/UART/UART_RX/fsm.v'
+Loading verilog file '/home/IC/Projects/rtl/UART/UART_RX/counter.v'
+Loading verilog file '/home/IC/Projects/rtl/UART/UART_RX/data_sampling.v'
+Loading verilog file '/home/IC/Projects/rtl/UART/UART_RX/deserializer.v'
+1
+read_verilog -container REF [glob /home/IC/Projects/rtl/ASYNC_FIFO/*.v]
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/rtl/ASYNC_FIFO/FIFO_WR.v'
+Loading verilog file '/home/IC/Projects/rtl/ASYNC_FIFO/FIFO_MEM_CNTRL.v'
+Loading verilog file '/home/IC/Projects/rtl/ASYNC_FIFO/FIFO.v'
+Loading verilog file '/home/IC/Projects/rtl/ASYNC_FIFO/DF_SYNC.v'
+Loading verilog file '/home/IC/Projects/rtl/ASYNC_FIFO/FIFO_RD.v'
+1
+# Read Reference technology libraries
+read_db -container REF "/home/IC/Projects/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db"
+Loading db file '/home/IC/Projects/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db'
+1
+# set the top Reference Design 
+set_reference_design SYS_TOP
+Reference design set to 'REF:/WORK/SYS_TOP'
+1
+set_top SYS_TOP
+Setting top design to 'REF:/WORK/SYS_TOP'
+Status:   Elaborating design SYS_TOP   ...  
+Status:   Elaborating design mux2X1   ...  
+Status:   Elaborating design DATA_SYNC  BUS_WIDTH=8 ...  
+Information: Created design named 'DATA_SYNC_BUS_WIDTH8'. (FE-LINK-13)
+Status:   Elaborating design SYS_CTRL  DATA_WIDTH=8, ADDRESS_WIDTH=4, FUN_WIDTH=4, ALU_OUT_WIDTH=16 ...  
+Information: Created design named 'SYS_CTRL_DATA_WIDTH8_ADDRESS_WIDTH4_FUN_WIDTH4_ALU_OUT_WIDTH16'. (FE-LINK-13)
+Status:   Elaborating design RST_SYNC  NUM_STAGES=2 ...  
+Information: Created design named 'RST_SYNC_NUM_STAGES2'. (FE-LINK-13)
+Status:   Elaborating design Reg_File  DATA_WIDTH=8, DEPTH=16, ADDRESS_WIDTH=4 ...  
+Information: Created design named 'Reg_File_DATA_WIDTH8_DEPTH16_ADDRESS_WIDTH4'. (FE-LINK-13)
+Status:   Elaborating design ALU  OPERAND_WIDTH=8, FUN_WIDTH=4 ...  
+Information: Created design named 'ALU_OPERAND_WIDTH8_FUN_WIDTH4'. (FE-LINK-13)
+Status:   Elaborating design CLK_GATE   ...  
+Status:   Elaborating design CLK_DIV_MUX   ...  
+Status:   Elaborating design Clk_Div  WIDTH=8 ...  
+Information: Created design named 'Clk_Div_WIDTH8'. (FE-LINK-13)
+Status:   Elaborating design FIFO  DATA_WIDTH=8, ADDRESS_WIDTH=4 ...  
+Information: Created design named 'FIFO_DATA_WIDTH8_ADDRESS_WIDTH4'. (FE-LINK-13)
+Status:   Elaborating design DF_SYNC  ADDRESS_WIDTH=4 ...  
+Information: Created design named 'DF_SYNC_ADDRESS_WIDTH4'. (FE-LINK-13)
+Status:   Elaborating design FIFO_WR  DATA_WIDTH=8, ADDRESS_WIDTH=4 ...  
+Information: Created design named 'FIFO_WR_DATA_WIDTH8_ADDRESS_WIDTH4'. (FE-LINK-13)
+Status:   Elaborating design FIFO_RD  DATA_WIDTH=8, ADDRESS_WIDTH=4 ...  
+Information: Created design named 'FIFO_RD_DATA_WIDTH8_ADDRESS_WIDTH4'. (FE-LINK-13)
+Status:   Elaborating design FIFO_MEM_CNTRL  DATA_WIDTH=8, ADDRESS_WIDTH=4 ...  
+Warning: Index may take values outside array bound, may cause simulation mismatch .. (Signal: MEM Block: /FIFO_MEM_CNTRL File: /home/IC/Projects/rtl/ASYNC_FIFO/FIFO_MEM_CNTRL.v Line: 33)  (FMR_ELAB-147)
+Information: Created design named 'FIFO_MEM_CNTRL_DATA_WIDTH8_ADDRESS_WIDTH4'. (FE-LINK-13)
+Status:   Elaborating design PULSE_GEN   ...  
+Status:   Elaborating design UART_RX   ...  
+Status:   Elaborating design fsm   ...  
+Status:   Elaborating design counter   ...  
+Status:   Elaborating design data_sampling   ...  
+Status:   Elaborating design parity_check   ...  
+Status:   Elaborating design start_check   ...  
+Status:   Elaborating design stop_check   ...  
+Status:   Elaborating design deserializer   ...  
+Status:   Elaborating design UART_TX   ...  
+Status:   Elaborating design serializer  WIDTH=8 ...  
+Warning: Index may take values outside array bound, may cause simulation mismatch .. (Signal: REG Block: /serializer File: /home/IC/Projects/rtl/UART/UART_TX/serializer.v Line: 24)  (FMR_ELAB-147)
+Information: Created design named 'serializer_WIDTH8'. (FE-LINK-13)
+Status:   Elaborating design FSM   ...  
+Status:   Elaborating design parity_Calc  WIDTH=8 ...  
+Information: Created design named 'parity_Calc_WIDTH8'. (FE-LINK-13)
+Status:   Elaborating design MUX   ...  
+Status:  Implementing inferred operators...
+
+************ Library Checking Summary ************
+Warning:  1 unlinked power cell(s) with unread pg pins.
+        Use 'report_libraries -defects all' for more details.
+**************************************************
+
+Top design set to 'REF:/WORK/SYS_TOP' with warnings
+   ATTENTION: RTL interpretation messages were produced during link.
+              Verification results may disagree with a logic simulator.
+
+************ RTL Interpretation Summary ************
+************ Design: REF:/WORK/SYS_TOP
+2 FMR_ELAB-147 messages produced    
+
+Please refer to the Formality log file for more details,
+or execute report_hdlin_mismatches.
+****************************************************
+
+Reference design set to 'REF:/WORK/SYS_TOP'
+1
+###################################################################
+#################### Implementation Container #####################
+###################################################################
+# Read Implementation Design Files
+read_verilog -netlist -container IMP "/home/IC/Projects/syn/SYS_TOP.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/Projects/syn/SYS_TOP.v'
+Created container 'IMP'
+Current container set to 'IMP'
+1
+# Read Implementation technology libraries
+read_db -container IMP "/home/IC/Projects/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db"
+Loading db file '/home/IC/Projects/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db'
+1
+# set the top Implementation Design
+set_implementation_design SYS_TOP
+Implementation design set to 'IMP:/WORK/SYS_TOP'
+1
+set_top SYS_TOP
+Setting top design to 'IMP:/WORK/SYS_TOP'
+Status:  Implementing inferred operators...
+
+************ Library Checking Summary ************
+Warning:  1 unlinked power cell(s) with unread pg pins.
+        Use 'report_libraries -defects all' for more details.
+**************************************************
+
+Top design successfully set to 'IMP:/WORK/SYS_TOP'
+Implementation design set to 'IMP:/WORK/SYS_TOP'
+1
+###################### Matching Compare points ####################
+match
+Reference design is 'REF:/WORK/SYS_TOP'
+Implementation design is 'IMP:/WORK/SYS_TOP'
+Status:  Checking designs...
+    Warning: 4 (16) undriven nets found in reference (implementation) design; see formality.log for list (FM-399)
+Status:  Building verification models...
+Status:  Processing Guide Commands...
+    Set don't verify point 'REF:/WORK/SYS_TOP/SO[3]'
+    Set don't verify point 'REF:/WORK/SYS_TOP/SO[2]'
+    Set don't verify point 'REF:/WORK/SYS_TOP/SO[1]'
+    Set don't verify point 'REF:/WORK/SYS_TOP/SO[0]'
+
+***************************** Guidance Summary *****************************
+                                         Status
+Command                 Accepted   Rejected  Unsupported  Unprocessed  Total
+----------------------------------------------------------------------------
+environment         :          2          0          0          0          2
+instance_map        :         28          0          0          0         28
+mark                :         22          0          0          0         22
+multiplier          :          2          0          0          0          2
+reg_constant        :          3          0          0          0          3
+replace             :          4          0          0          0          4
+transformation
+   map              :         24          0          0          0         24
+   share            :          4          1          0          0          5
+uniquify            :          2          2          0          0          4
+
+Note: If verification succeeds you can safely ignore unaccepted guidance commands.
+
+SVF files read:
+      /home/IC/Projects/syn/SYS_TOP.svf
+
+SVF files produced:
+  /home/IC/Projects/fm/formality_svf/
+    svf.txt
+****************************************************************************
+
+Status:  Matching...
+    
+*********************************** Matching Results ***********************************    
+ 377 Compare points matched by name    
+ 0 Compare points matched by signature analysis    
+ 0 Compare points matched by topology    
+ 7 Matched primary inputs, black-box outputs    
+ 0(0) Unmatched reference(implementation) compare points    
+ 0(0) Unmatched reference(implementation) primary inputs, black-box outputs    
+ 4(0) Unmatched reference(implementation) unread points    
+****************************************************************************************
+
+1
+######################### Run Verification ########################
+set successful [verify]
+Reference design is 'REF:/WORK/SYS_TOP'
+Implementation design is 'IMP:/WORK/SYS_TOP'
+    
+*********************************** Matching Results ***********************************    
+ 377 Compare points matched by name    
+ 0 Compare points matched by signature analysis    
+ 0 Compare points matched by topology    
+ 7 Matched primary inputs, black-box outputs    
+ 0(0) Unmatched reference(implementation) compare points    
+ 0(0) Unmatched reference(implementation) primary inputs, black-box outputs    
+ 4(0) Unmatched reference(implementation) unread points    
+****************************************************************************************
+
+Status:  Verifying...
+
+************ RTL Interpretation Summary ************
+************ Design: REF:/WORK/SYS_TOP
+2 FMR_ELAB-147 messages produced    
+
+Please refer to the Formality log file for more details,
+or execute report_hdlin_mismatches.
+****************************************************
+
+
+***************************** Synopsys Auto Setup Summary ******************************
+
+!!! Synopsys Auto Setup Mode was enabled. !!!
+!!! Verification results are valid assuming the following setup constraints: !!!
+
+### RTL Interpretation Setup
+   set hdlin_ignore_parallel_case false
+   set hdlin_ignore_full_case false
+   set hdlin_error_on_mismatch_message false
+   set hdlin_ignore_embedded_configuration true
+
+### Undriven Signal Handling Setup
+   set verification_set_undriven_signals synthesis
+
+### Test Logic Setup
+   set verification_verify_directly_undriven_output false
+   For details see report_dont_verify_points and report_constants
+
+
+For further details on Synopsys Auto Setup Mode: Type man synopsys_auto_setup
+****************************************************************************************
+
+
+********************************* Verification Results *********************************
+Verification SUCCEEDED
+   ATTENTION: synopsys_auto_setup mode was enabled.
+              See Synopsys Auto Setup Summary for details.
+   ATTENTION: RTL interpretation messages were produced during link
+              of reference design.
+              Verification results may disagree with a logic simulator.
+-----------------------------------------------------------------------
+ Reference design: REF:/WORK/SYS_TOP
+ Implementation design: IMP:/WORK/SYS_TOP
+ 377 Passing compare points
+----------------------------------------------------------------------------------------
+Matched Compare Points     BBPin    Loop   BBNet     Cut    Port     DFF     LAT   TOTAL
+----------------------------------------------------------------------------------------
+Passing (equivalent)           0       0       0       0       4     372       1     377
+Failing (not equivalent)       0       0       0       0       0       0       0       0
+Not Compared
+  Don't verify                 0       0       0       0       4       0       0       4
+  Unread                       0       0       0       0       0       9       0       9
+****************************************************************************************
+1
+if {!$successful} {
+diagnose
+analyze_points -failing
+}
+########################### Reporting ############################# 
+report_passing_points > "passing_points.rpt"
+report_failing_points > "failing_points.rpt"
+report_aborted_points > "aborted_points.rpt"
+report_unverified_points > "unverified_points.rpt"
+start_gui
