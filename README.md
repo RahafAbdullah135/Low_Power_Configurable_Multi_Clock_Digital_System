@@ -6,7 +6,7 @@ This project focuses on the design and implementation of a low-power, configurab
   **Design and implementation of the following system blocks:**
   - ALU (Arithmetic Logic Unit)
   - Register File
-  - Synchronous FIFO:
+  - Synchronous FIFO
   - Integer Clock Divider
   - Clock Gating
   - Synchronizers
