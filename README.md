@@ -35,14 +35,14 @@ Verify the system's functionality after layout, taking into account actual delay
 ## System Architecture
 ![system](https://github.com/user-attachments/assets/c46b4f86-f469-44cc-8495-fe829af898f5)
 
-## System operations:
-**Supported Commands**
+## System operations
+**Supported Commands:**
 - Register File Write command
 - Register File Read command
 - ALU Operation command with operand
 - ALU Operation command with No operand
   
-**ALU supported operations**
+**ALU supported operations:**
 - Addition
 - Subtraction
 - Multiplication
@@ -58,11 +58,11 @@ Verify the system's functionality after layout, taking into account actual delay
 - SHIFT: A >> 1
 - SHIFT: A << 1
   
-**Register File Operations**
+**Register File Operations:**
 - Register File Write
 - Register File read
 
-## System Specifications:
+## System Specifications
 - Reference Clock (REF_CLK): 50 MHz
 - UART Clock (UART_CLK): 3.6864 MHz
 - Clock Divider: Always enabled (clock divider enable = 1)
