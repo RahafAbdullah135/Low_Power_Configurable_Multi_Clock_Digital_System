@@ -1,4 +1,4 @@
-# Low-Power-Configurable-Multi-Clock-Digital-System
+# RTL to GDS Implementation of Low Power Configurable Multi Clock Digital System
 ## Overview
 This project focuses on the design and implementation of a low-power, configurable multi-clock digital system. The system is designed to receive commands through a UART receiver, execute different functions (such as reading/writing to a register file or processing data using an ALU), and send the results back through a UART transmitter. An asynchronous FIFO is used to handle different clock rates and prevent data loss during transmission.
 ## Project Phases
