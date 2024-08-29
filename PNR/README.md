@@ -33,4 +33,10 @@ Ensure that the physical design complies with all manufacturing design rules spe
 ### 8-Layout Versus Schematic (LVS) Check
 **Objective:** Ensure that the physical layout matches the original netlist.
 
+![pnr1](https://github.com/user-attachments/assets/42534cf5-49af-44f3-bc3f-7ad5ab13bd0f)
+
+![pnr3](https://github.com/user-attachments/assets/17144430-774e-40b5-ad56-8446751e7ddf)
+
+![pnr2](https://github.com/user-attachments/assets/72e9a81c-f2af-423c-96d4-cbe89afee463)
+
 
