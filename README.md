@@ -6,7 +6,7 @@ This project focuses on the design and implementation of a low-power, configurab
   **Design and implementation of the following system blocks:**
   - ALU (Arithmetic Logic Unit)
   - Register File
-  - Synchronous FIFO
+  - Synchronous FIFO:
   - Integer Clock Divider
   - Clock Gating
   - Synchronizers
@@ -41,6 +41,22 @@ Verify the system's functionality after layout, taking into account actual delay
 - Register File Read command
 - ALU Operation command with operand
 - ALU Operation command with No operand
+  
+**ALU supported operations**
+- Addition
+- Subtraction
+- Multiplication
+- Division
+- AND
+- OR
+- NAND
+- NOR
+- XOR
+- XNOR
+- CMP: A = B
+- CMP: A > B
+- SHIFT: A >> 1
+- SHIFT: A << 1
 
 ## System Specifications:
 - Reference Clock (REF_CLK): 50 MHz
