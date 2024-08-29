@@ -35,13 +35,11 @@ Verify the system's functionality after layout, taking into account actual delay
 ## System Architecture
 ![system](https://github.com/user-attachments/assets/c46b4f86-f469-44cc-8495-fe829af898f5)
 
-## System operations
-**Supported Commands:**
-- Register File Write command
-- Register File Read command
-- ALU Operation command with operand
-- ALU Operation command with No operand
-  
+## Clock Domains 
+**REF_clock:** (RegFile - ALU - Clock Gating - SYS_CTRL) \
+**UART_clock:** (UART_TX - UART_RX - PULSE_GEN - Clock Dividers)
+
+## System Operations  
 **ALU supported operations:**
 - Addition
 - Subtraction
@@ -61,6 +59,12 @@ Verify the system's functionality after layout, taking into account actual delay
 **Register File Operations:**
 - Register File Write
 - Register File read
+
+## Supported Commands
+- Register File Write command
+- Register File Read command
+- ALU Operation command with operand
+- ALU Operation command with No operand
 
 ## System Specifications
 - Reference Clock (REF_CLK): 50 MHz
