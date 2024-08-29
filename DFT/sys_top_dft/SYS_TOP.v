@@ -61,11 +61,7 @@ module SYS_TOP
 
  wire                       FIFO_EMPTY ;
  wire                       RD_INC ;
- //wire                       WR_INC ;
  wire   [DATA_WIDTH-1:0]    TX_IN_DATA ;
-
- //wire                       PARITY_ERROR ;
- //wire                       STOP_ERROR ;
 
 wire                 		       REF_SCAN_CLK;
 wire                                   UART_SCAN_CLK;
