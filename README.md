@@ -27,7 +27,7 @@ Perform the physical implementation of the system, following the standard ASIC f
 ### 7.  Post-Layout Verification:
 Verify the system's functionality after layout, taking into account actual delays.
 
-# Tools Used
+## Tools Used
 - Design Compiler: For synthesis and optimization.
 - Formality: For equivalence checking.
 - ASIC Tools: For physical implementation and GDS file generation.
@@ -57,6 +57,10 @@ Verify the system's functionality after layout, taking into account actual delay
 - CMP: A > B
 - SHIFT: A >> 1
 - SHIFT: A << 1
+  
+**Register File Operations**
+- Register File Write
+- Register File read
 
 ## System Specifications:
 - Reference Clock (REF_CLK): 50 MHz
